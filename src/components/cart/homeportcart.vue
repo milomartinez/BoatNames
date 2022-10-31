@@ -16,7 +16,7 @@
                             v-model="each.selected"
                             :items="each.items"
                             outlined
-                            dense
+       
                             label="Height"                       
                             >                
                         </v-select>
@@ -32,21 +32,17 @@
                 </v-row>
                 <v-row>                                  
                     <v-container class="mx-4 mt-n6" >   
-                        <v-row>     
+                        <v-row justify="center" align="center">     
                             <v-spacer></v-spacer>          
-                            <h2 class="mx- my-1 ">Price:</h2>
-                            <v-card 
-                                class="mx-2"
-                                width="120px" 
-                                height="50px">
-                                <v-container align="center" justify="center">
-                                    <v-row align="center" justify="center">
-                                        <a v-if="prices.HomePort[id]!= null"> {{prices.HomePort[id].toLocaleString('us-US', { style: 'currency', currency: 'AUD' }) }}</a>  
-                                    </v-row>
-                                </v-container>
+                            <h2 >Price:</h2>
+                            <v-card  class="mx-2" min-width="120px" min-height="50" >
+                               <v-card-title primary-title class="justify-center">
+                                   <a v-if="prices.HomePort[id]!= null"> {{prices.HomePort[id].toLocaleString('us-US', { style: 'currency', currency: 'AUD' }) }}</a>  
+                               </v-card-title>
+                               
                             </v-card>  
-                            <v-btn class="primary mx-4 my-3"
-                                small
+                            <v-btn class="primary "
+                                
                                 @click="add2Cart( each)"
                                 :disabled="!each.bt_enable"
                                 >
@@ -61,36 +57,36 @@
         <v-card
             class="ma-2 pa-2"
             outlined>
-            <v-row>
-                <a class="mx-4">Lifering</a>
-                <v-spacer></v-spacer>          
-                <h2 class="mx- my-1 ">Price:</h2>
-                <v-card 
-                    class="mx-2"
-                    width="120px" 
-                    height="50px">
-                    <v-container align="center" justify="center">
-                        <v-row align="center" justify="center">
-                  
-                            <a v-if="liferingprice!= null"> {{liferingprice.toLocaleString('us-US', { style: 'currency', currency: 'AUD' })}} </a>  
-                            
+            <div class="ma-2">
+                <v-row>
+                    <a class="mx-4">Lifering</a>         
+                    <v-container class="mx-4 mt-n6" >    
+                        <v-row justify="center" align="center">  
+                            <v-spacer></v-spacer>        
+                            <h2 class="mx- my-1 ">Price:</h2>
+                            <v-card class="mx-2" min-width="120px" min-height="50" >
+                                <v-card-title primary-title class="justify-center">
+                                    <a v-if="liferingprice!= null"> {{liferingprice.toLocaleString('us-US', { style: 'currency', currency: 'AUD' })}} </a>  
+                                </v-card-title>                        
+                            </v-card>  
+                            <v-btn class="primary "
+                                @click="addLifering2Cart"
+                                :disabled="liferingprice == null" >
+                                Add to Cart
+                            </v-btn> 
                         </v-row>
                     </v-container>
-                </v-card>  
-                <v-btn class="primary ml-3 mr-10 my-3"
-                    small
-                    @click="addLifering2Cart"
-                    :disabled="liferingprice == null"
-                     >
-                    Add to Cart
-                </v-btn> 
-            </v-row>
+                </v-row>
+            </div>
         </v-card>
        <v-card
             class="ma-2 pa-2"
             outlined>
+            <div class="ma-2">
             <v-row>
                 <a class="mx-4">Tender</a>
+                <v-container class="mx-4 mt-n6" >
+                <v-row justify="center" align="center">
                 <v-spacer></v-spacer>          
                 <h2 class="mx- my-1 ">Price:</h2>
                 <v-card 
@@ -105,16 +101,19 @@
                         </v-row>
                     </v-container>
                 </v-card>  
-                <v-btn class="primary ml-3 mr-10 my-3"
-                    small
+                <v-btn class="primary"
+               
                     :disabled="tenderprice == null"
                     @click="addTender2Cart"
                      >
                     Add to Cart
                 </v-btn> 
+                
+                </v-row>
+            </v-container>
             </v-row>
-
-
+        </div>
+                
         </v-card>
         <v-row>
 			<v-text-field 

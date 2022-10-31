@@ -77,12 +77,11 @@
                                 label="Quantity"                       
                                 >                
                             </v-select>
-                                    </v-row>
+                            </v-row>
                                 </v-col>
                                 
                                 <v-col cols="8" > 
-                                    <v-row  >  
-                                
+                                    <v-row  >                                  
                                         <h2 class="mx-1 my-1 ">Price:</h2>
                                         <v-card  >
                                             <v-card-title primary-title class="justify-center">
