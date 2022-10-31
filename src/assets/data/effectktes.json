@@ -1,0 +1,60 @@
+{
+    "stroke":{
+
+        "thinclose":
+        {
+            "size": "0.10em ", 
+            "gap" : "0.05em "
+        },
+        "thinwide":
+        {
+            "size": "0.12em ", 
+            "gap" : "0.07em "
+        },
+
+        "thickclose":
+        {
+            "size": "0.12em ", 
+            "gap" : "0.05em "
+        },
+
+
+        "thickwide":
+        {
+            "size": "0.14em ", 
+            "gap" : "0.07em "
+        }
+
+    },
+    "shadow":{
+
+        "thinclose":
+        {
+            "size": "0.185em ", 
+            "gap" : "0.135em ",
+            "margin":"0.06em 0.06em "
+        },
+        "thinwide":
+        {
+            "size": "0.19em ", 
+            "gap" : "0.165em ",
+            "margin":"0.07em 0.07em "
+        },
+
+        "thickclose":
+        {
+            "size": "0.19em ", 
+            "gap" : "0.165em ",
+            "margin":"0.07m 0.07em "
+        },
+
+
+        "thickwide":
+        {
+            "size": "0.19em ", 
+            "gap" : "0.18em ",
+            "margin":"0.08em 0.08em "
+        }
+
+    }
+}

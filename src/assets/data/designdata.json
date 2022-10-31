@@ -1,0 +1,16 @@
+{"regonumbers":[
+	{"type":"powerBoatRego","value":[
+		{"state":"All States","height":150.0,"placement":"each side"}
+	]},
+	{"type":"yachtRego","value":[
+		{"state":"QLD","height":75.0,"placement":"transom"},
+		{"state":"NSW","height":100.0,"placement":"each side"},
+		{"state":"VIC","height":150.0,"placement":"each side"},
+		{"state":"SA","height":150.0,"placement":"each side"},
+		{"state":"WA","height":50.0,"placement":"each side"},
+		{"state":"TAS","height":150.0,"placement":"each side"}
+	]},
+	{"type":"PWC","value":[
+		{"state":"All States","height":100,"placement":"each side"}
+	]}
+]}

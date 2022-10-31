@@ -1,0 +1,69 @@
+{
+    "BoatName": 
+    {
+        "text"			:"Your Boat Name",
+
+        "font"			:"Elite Sample",
+        "effect"        : null,
+        "slanted"		: false,
+        "font_color"	:{"color":"rgba(0,0,0)"}	,
+        "fnt_size"		:12,
+        "back_color"	:{"color":"rgba(255,255,255)"},
+        "shadow"		:
+                        {
+                            "color"		:{"color":"rgba(153,153,153)"}	,
+                            "enable"	:false
+                        },
+        "stroke"		:
+                        {
+                            "type"  	:"thinclose",
+                            "color"		:{"color":"rgba(0,0,0)"},
+                            "enable"	:false
+                        }
+
+    },
+
+    "RegoNumber":
+    {
+        "text"			:"Rego Numbers",
+        "font"			:"Nice Block",
+        "slanted"		: false,
+        "font_color"	:{"color":"rgba(0,0,0)"}	,
+        "fnt_size"		:12,
+        "back_color"	:{"color":"rgba(255,255,255)"},
+        "shadow"		:
+                        {
+                            "color"		:{"color":"rgba(153,153,153)"},
+                            "enable"	:false
+                        },
+        "stroke"		:
+                        {
+                            "type"  	:"thinclose",
+                            "color"		:{"color":"rgba(0,0,0)"}	,
+                            "enable"	: false
+                        }
+
+    },
+
+    "HomePort":
+    {
+        "text"			:"Home Port",
+        "font"			:"Home Port",
+        "slanted"		: false,
+        "font_color"	:{"color":"rgba(0,0,0)"},
+        "fnt_size"		:12,
+        "back_color"	:{"color":"rgba(255,255,255)"},
+        "shadow"		:
+                        {
+                            "color"		:{"color":"rgba(153,153,153)"},
+                            "enable"	:false
+                        },
+        "stroke"		:
+                        {
+                            "type"  	:"thinclose",
+                            "color"		:{"color":"rgba(0,0,0)"}	,
+                            "enable"	:false
+                        }
+
+    }
+}
