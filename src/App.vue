@@ -94,8 +94,7 @@ export default {
 		this.design_data = jDesignData
 		this.products = jProducts
 
-		console.log(this.design_data);
-		console.log(this.products);
+
 		this.processDesignData();
 		this.processProducts();	
 		this.updateReady( true);

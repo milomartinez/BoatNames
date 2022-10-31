@@ -1,5 +1,6 @@
 <template>
 	<v-container >
+		<div class="my-2">
 		<v-row justify="center">
 			<v-col cols="1" />
 			<v-col cols="10">
@@ -9,6 +10,9 @@
 				<HelpTipBt id=4 />  
 			</v-col>
 		</v-row>
+		</div>
+
+		<div class="my-2">
 		<v-row justify="center"   v-show="display_special" >    
 			<v-col cols="1" />
 			<v-col cols="10">
@@ -18,6 +22,8 @@
 				<HelpTipBt id=5 />  
 			</v-col>
 		</v-row>
+		</div>
+		<div class="my-2">
 		<v-row justify="center">   
 			<v-col cols="1" />
 			<v-col cols="10"> 
@@ -26,7 +32,8 @@
 			<v-col cols="1" >
 				<HelpTipBt id=6 />  
 			</v-col> 
-		</v-row>		
+		</v-row>
+		</div>		
 	</v-container>
 </template>
 
@@ -52,13 +59,10 @@ export default {
 	},
 	methods: {
 		radioChange(data){
-			this.display_special = data;
-
-	
-
-			
+			this.display_special = data;			
 		}
 	},
+	
 	created(){
 		this.$root.$on('reset_display',() => {
 			this.display_special = false;

@@ -11,7 +11,7 @@
                     <v-row class="my-1">
                         <v-col cols="12" md="5">
                             <v-row class="justify-start  mt-n4">
-                                <a class="mx-2  justify-center">
+                                <a class="ma-2  justify-center">
                                         How we measure the Height
                                 </a>
                             </v-row>
@@ -24,11 +24,11 @@
                         <v-col cols="6" md="3" class="" >
                   
                             <v-select
-                            class="my-select"
+                           
                                 item-text="text"
                                 v-model="each.selected"
                                 :items="mesHeight"
-                                
+                                outlined 
                              
                                 label="Height"                       
                                 >                
@@ -37,6 +37,7 @@
                     
                         <v-col cols="6" md="4">
                             <v-text-field 
+                            
                                 class="mr-4"
                                 v-model="each.maxlength"
                                 label="Set Max Length (Optional)"
@@ -48,7 +49,7 @@
                     <v-row class="my-1">                      
                         <v-col cols="12" md="5">
                             <v-row class="justify-start ">
-                                <a class="mx-2">
+                                <a class="ma-2">
                                     For 2 boats names, select quantity 2 etc
                                 </a>
                             </v-row>
@@ -67,12 +68,12 @@
                                 
                      
                             <v-select
-                            class="my-select"
+                          
                                 v-model="each.qty"
                                 :items="comboQty"
                                 item-text="text"
                                 item-value="value"
-                     
+                                outlined 
                                 label="Quantity"                       
                                 >                
                             </v-select>
@@ -80,15 +81,15 @@
                                 </v-col>
                                 
                                 <v-col cols="8" > 
-                                    <v-row  align="center" justify="center" class="mx-auto">  
+                                    <v-row  >  
                                 
                                         <h2 class="mx-1 my-1 ">Price:</h2>
-                                        <v-card width="110px" height="50px">
-                                            <v-container align="center" justify="center">
-                                                <v-row align="center" justify="center">
-                                                    <a v-if="current_price !=  null">{{(each.qty*current_price[id]).toLocaleString('us-US', { style: 'currency', currency: 'AUD' }) }}</a>  
-                                                </v-row>
-                                            </v-container>
+                                        <v-card  >
+                                            <v-card-title primary-title class="justify-center">
+                                            <a v-if="current_price !=  null">
+                                                {{(each.qty*current_price[id]).toLocaleString('us-US', { style: 'currency', currency: 'AUD' }) }}
+                                            </a>  
+                                        </v-card-title>
                                         </v-card> 
                                     </v-row>    
 
@@ -326,16 +327,10 @@ export default {
         },
     },
     
-    created(){
-
-        console.log("created");
-     //   this.namesdata.boatname.selected = this.$cookies.get("sidename_selected")
-        //this.namesdata.transomname.selected = this.$cookies.get("transomname_selected")
-    },
+  
     mounted(){      
   
-
-        console.log("mounted");
+       
         for (var tag in this.namesdata){        
            // console.log(tag)
             this.setupData(tag);
@@ -366,12 +361,5 @@ h2{
     color:#069 ;
 }
 
-.my-select {
-    background-color: orange;
-    overflow: visible;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 280px;
-}
 
 </style>

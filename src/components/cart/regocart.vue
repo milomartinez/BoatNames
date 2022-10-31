@@ -5,7 +5,7 @@
             <!--v-item  v-slot:default="{ active, toggle }" :key="each.name" v-for="(each,id) in regodata"-->
                 <v-item   :key="each.name" v-for="(each,id) in regodata">
                 <v-card
-                    class="ma-2 pa-2"
+                    class="pa-4"
                     outlined
                     >
                     <v-row>
@@ -24,7 +24,7 @@
                                 v-model="each.selected"
                                 :items="each.items"
                                 outlined
-                                dense
+                      
                                 label="Choose State"                       
                                 >                
                             </v-select>
@@ -32,6 +32,7 @@
 
                         <v-col cols="6" md="4">
                             <v-text-field 
+                            
                                 v-model="each.maxlength"
                                 label="Set Max Length (Optional)"
                                 outlined  >        
@@ -41,18 +42,15 @@
                     </v-row>
                     <v-row>                                  
                     <v-container class="mx-4 mt-n6" >   
-                            <v-row>     
+                            <v-row justify="center" align="center">     
                                 <v-spacer></v-spacer>          
                                 <h2 class="mx-2 my-1 ">Price:</h2>
-                                <v-card width="120px" height="50px">
-                                    <v-container align="center" justify="center">
-                                        <v-row align="center" justify="center">
+                                <v-card width="120px">
+                                    <v-card-title primary-title class="justify-center">
                                             <a v-if="prices.RegoNumber[id]!=null">{{prices.RegoNumber[id].toLocaleString('us-US', { style: 'currency', currency: 'AUD' })   }}</a>  
-                                        </v-row>
-                                    </v-container>
+                                   </v-card-title>
                                 </v-card>  
-                                <v-btn 
-                                    small
+                                <v-btn                                     
                                     :disabled="!each.bt_enable"
                                     @click="add2Cart(id, each)"
                                     class="primary mx-4 my-2">

@@ -1,5 +1,5 @@
 <template>
-        <v-container fluid class="background   center  " pa-4> 
+  <v-container fluid class="background   center  " pa-4> 
     <v-row align="center" justify="center">
     <v-img
       :src="myImage"
