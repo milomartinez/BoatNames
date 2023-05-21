@@ -102,7 +102,8 @@ export default new Vuex.Store({
 			if(cdata.maxlength != null)
 				smsg += "&wccpf_maxlength=" +cdata.maxlength;
 			
-			smsg += "&wccpf_quantity="+cdata.qty
+			//smsg += "&wccpf_quantity="+cdata.qty
+			smsg += "&quantity="+cdata.qty
 
 			//	smsg += "&slanted=" +
 			

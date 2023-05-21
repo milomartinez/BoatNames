@@ -5,21 +5,24 @@
             <!--v-item  v-slot:default="{ active, toggle }" :key="each.name" v-for="(each,id) in regodata"-->
                 <v-item   :key="each.name" v-for="(each,id) in regodata">
                 <v-card
-                    class="pa-4"
+                    class="pa-4 ma-1"
                     outlined
                     >
                     <v-row>
-                        <v-col cols="12" md="5" >
+                        <v-col cols="12" md="4" >
                             <v-row class="justify-md-start justify-center">
                                 <v-col>
-                                    <a class="mx-2 center">{{each.name}}</a>
+                                    <v-row> <a class="mx-2 center">{{each.name}}</a></v-row>
+                                    <v-row><a1 class="mx-2 center">{{each.description}}</a1></v-row>
+                                   
+                              
                                 </v-col>
                                 <v-col cols="5">
               
                                 </v-col>
                             </v-row>
                         </v-col>
-                        <v-col cols="6" md="3">
+                        <v-col cols="12" md="4" >
                             <v-select
                                 v-model="each.selected"
                                 :items="each.items"
@@ -30,7 +33,7 @@
                             </v-select>
                         </v-col>
 
-                        <v-col cols="6" md="4">
+                        <v-col cols="12" md="4" >
                             <v-text-field                             
                                 v-model="each.maxlength"
                                 label="Set Max Length (Optional)"
@@ -83,6 +86,7 @@ export default {
             powerBoatRego:{
                 id:0,
                 name:"Planing Power Boat ",
+                description:"You will receive 1 Pair, one set for each side",
                 selected:null,
                 items:[],
                 raw_items:[],
@@ -94,6 +98,7 @@ export default {
             yachtRego:{
                 id:1,
                 name:"Yatch & Displacement",
+                description:"If it says \"each Side\" you will receive 1 Pair, one set for each side",
                 selected:null,
                 items:[],
                 raw_items:[],
@@ -105,6 +110,7 @@ export default {
            PWC: {
                 id:2,
                 name:"PWC / Jetski",
+                description:"You will receive 1 Pair, one set for each side",
                 selected:null,
                 items:[],
                 raw_items:[],

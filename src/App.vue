@@ -165,7 +165,7 @@ export default {
 		console.log("products:",this.products);
 		this.processProducts();	*/
 
-		console.log("2022-10-29 v5");
+		console.log("2023-01-23 v1");
 	},    
 
 	updated(){
