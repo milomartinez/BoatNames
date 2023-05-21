@@ -12,8 +12,8 @@
                         <v-col cols="12" md="3" >
                             <v-row >
                                 <v-col>
-                                    <v-row> <a class="mx-2 center">{{each.name}}</a></v-row>
-                                    <v-row><p class="mx-2 center">{{each.description}}</p></v-row>                                   
+                                    <v-row> <a class="mx-2 left">{{each.name}}</a></v-row>
+                                    <v-row><p class="mx-2 justify">{{each.description}}</p></v-row>                                   
                               
                                 </v-col>                                
                             </v-row>
