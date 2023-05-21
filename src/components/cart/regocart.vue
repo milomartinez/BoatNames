@@ -9,20 +9,16 @@
                     outlined
                     >
                     <v-row>
-                        <v-col cols="12" md="4" >
-                            <v-row class="justify-md-start justify-center">
+                        <v-col cols="12" md="3" >
+                            <v-row >
                                 <v-col>
                                     <v-row> <a class="mx-2 center">{{each.name}}</a></v-row>
-                                    <v-row><a1 class="mx-2 center">{{each.description}}</a1></v-row>
-                                   
+                                    <v-row><p class="mx-2 center">{{each.description}}</p></v-row>                                   
                               
-                                </v-col>
-                                <v-col cols="5">
-              
-                                </v-col>
+                                </v-col>                                
                             </v-row>
                         </v-col>
-                        <v-col cols="12" md="4" >
+                        <v-col cols="12" md="5" >
                             <v-select
                                 v-model="each.selected"
                                 :items="each.items"
