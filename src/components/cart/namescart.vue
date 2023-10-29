@@ -25,6 +25,13 @@
                 class="my-2"
                 outlined>
                 <v-container class="ma-4">
+                    <v-row>
+                        <v-col cols="12" md="5"></v-col>
+                        <v-col cols="6" md="3"></v-col>
+                        <v-col cols="6" md="4"> <a class="mx-1">We will compress back ONLY if it is longer</a></v-col>
+
+
+                    </v-row>
                     <v-row class="my-1">
                         <v-col cols="12" md="5">
                             <v-row class="justify-start  mt-n4">
@@ -53,6 +60,7 @@
                         </v-col>
                     
                         <v-col cols="6" md="4">
+                          
                             <v-text-field 
                             
                                 class="mr-4"
@@ -134,11 +142,15 @@
 		</div>   
 		<v-row>
 			<v-text-field 
+         
 				class="ma-4"
 				v-model="xtrainfo"
 				placeholder="Extra Info"
 				label="Extra Info"
 				outlined  >          
+                <template v-slot:label>
+                 <h2>Extra Info</h2>
+    </template>
 			</v-text-field> 
 		</v-row> 
     </v-container>
@@ -298,7 +310,7 @@ export default {
         updatePrices(){
              this.current_price = {}
                for(var name in this.namesdata){
-                console.log("name :", name);
+            
                 var each    = this.namesdata[name]   
                 var obj     = {}
                 obj.selected=each.selected
@@ -330,7 +342,7 @@ export default {
 			tmp = tmp.filter(function(v){return selection == v.attribute_size});
 		
 			var design_tmp = this.design_displays['BoatName']
-            console.log("design_tmp :", design_tmp)
+
 			var aColor = []; 
 			aColor.push(design_tmp.font_color);
 			if(design_tmp.shadow.enable)aColor.push(design_tmp.shadow.color);
@@ -384,10 +396,17 @@ export default {
 
 }
 </script>
-<style scoped>
+<style >
 h2{
     color:#069 ;
 }
+.custom-placeholder-color input::placeholder {
+  color: red !important;
+  opacity: 1;
+}
 
-
+.custom-label-color .v-label {
+  color: red;
+  opacity: 1;
+}
 </style>

@@ -1,8 +1,7 @@
 <template>
-	<v-app>   
+	<v-app style="overflow: hidden;">   
   
-			<v-card
-				absolute>		
+			<v-card>		
 				<v-col align="center" justify="center">
 					<Topbar />     
 				</v-col>			
@@ -11,7 +10,7 @@
 				class="overflow-y-auto "
 				max-height="600"
 				width="100%">
-				<v-container height="100%" width="100%"  >  
+				<v-container  height="100%" width="100%"  >  
 					<LoadingScreen />
 					<DialogManager />            
 					<keep-alive >            
