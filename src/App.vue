@@ -1,15 +1,13 @@
 <template>
 	<v-app>   
-		<div>        
+  
 			<v-card
-				absolute             
-				scroll-target="#scrolling-techniques" >		
+				absolute>		
 				<v-col align="center" justify="center">
 					<Topbar />     
 				</v-col>			
 			</v-card>   
 			<v-sheet
-				id="scrolling-techniques"
 				class="overflow-y-auto "
 				max-height="600"
 				width="100%">
@@ -24,7 +22,7 @@
 			</v-sheet>  
 		<!--	<Stripe />
 		-->
-		</div>
+	
 	</v-app>
 </template>
 
@@ -184,15 +182,28 @@ export default {
 	}
 };
 </script>
-<!--
+
 <style  scoped>
-html {
-  overflow:   scroll;
-}
+
+/* width */
 ::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
+  width: 20px;
 }
 
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2196f3; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0367B4; 
+}
 </style>
--->

@@ -1,7 +1,24 @@
 <template>
    
     <v-container>   
-        <h2 >Order Boat Names</h2>
+        <v-row>
+            <v-col cols="4">
+                <h2 >Order Boat Names</h2>
+            </v-col>
+            <v-col cols="4">
+                <v-card color="blue">
+                    <v-card-title primary-title class="justify-center white--text" >
+                        
+                        PLEASE READ ALL INFO
+                    </v-card-title>
+
+                </v-card>
+            </v-col>
+            <v-col cols="4">
+        
+            </v-col>
+        </v-row>
+        
     
         <div :key=each.name v-for="(each,id) in this.namesdata">              
             <v-card 
