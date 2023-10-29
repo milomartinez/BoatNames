@@ -145,7 +145,7 @@ export default {
                 maxlength:null,
                 price:null,
                 bt_enable:false,
-                qty:1,
+                qty:null,
             }
         },
 
@@ -273,24 +273,31 @@ export default {
 
             this.namesdata[tag].items.sort(this.mysort);
             
-            if(this.namesdata[tag].selected  == null)
-            this.namesdata[tag].selected = this.namesdata[tag].items[0];
+            //if(this.namesdata[tag].selected  == null)
+            //this.namesdata[tag].selected = this.namesdata[tag].items[0];
     
         },
 
         updatePrices(){
              this.current_price = {}
-            for(var name in this.namesdata){
+               for(var name in this.namesdata){
+                console.log("name :", name);
                 var each    = this.namesdata[name]   
                 var obj     = {}
                 obj.selected=each.selected
                 obj.tag     = name
-                this.prices.BoatName[name]   = (obj  == null)?null:this.getNamePrice(obj).price
-               
+                var tmp = this.getNamePrice(obj)
+               this.prices.BoatName[name]   = (tmp  == null)?null:this.getNamePrice(obj).price
+
+               if(this.prices.BoatName[name]  == null)
+               this.current_price[name] = 0
+                else
+
                 this.current_price[name] =  this.prices.BoatName[name]
-              //  console.log(this.current_price[name])
-                      
+     
+                       
             }
+           
         },
 
         getNamePrice:function( obj)   {		
@@ -300,10 +307,13 @@ export default {
 			this.cart[tag] = {};
 			this.cart[tag].id =this.design_products[tag].id;
 
+
 			var tmp = this.design_products[tag].variations;
+     
 			tmp = tmp.filter(function(v){return selection == v.attribute_size});
 		
 			var design_tmp = this.design_displays['BoatName']
+            console.log("design_tmp :", design_tmp)
 			var aColor = []; 
 			aColor.push(design_tmp.font_color);
 			if(design_tmp.shadow.enable)aColor.push(design_tmp.shadow.color);
@@ -320,8 +330,10 @@ export default {
 			var nColors =  this.color_tags[ Object.keys(color_obj).length - 1];
 		
 			var elem = tmp.filter(function(v){return nColors == v.attribute_colors})[0];	 
+            if(typeof elem == 'undefined')
+                return null;
             this.cart[tag].variation_id = elem.id;	
-           // console.log(elem)	 
+
 			return elem	
         },
     },
