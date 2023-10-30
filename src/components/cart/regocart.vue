@@ -1,20 +1,20 @@
 <template>
     <v-container>
     
-        <v-row>
-            <v-col cols="4">
+        <v-row class="ma-1">
+            <v-col cols="3">
                 <h2 class="ml-2" >Rego</h2>
             </v-col>
-            <v-col cols="4">
+            <v-col cols="6">
                 <v-card color="blue">
-                    <v-card-title primary-title class="justify-center white--text" >
+                    <v-card-title primary-title class="justify-center white--text"  style="word-break: break-word">
                         
                         PLEASE READ ALL INFO
                     </v-card-title>
 
                 </v-card>
             </v-col>
-            <v-col cols="4">
+            <v-col cols="3">
         
             </v-col>
         </v-row>

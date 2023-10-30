@@ -1,7 +1,7 @@
 <template>
     <v-item-group  v-model="radio_selected" row @change="getRadioButton()">      
         <v-row align="center" justify="center"> 
-            <v-card  class="px-5 mx-5"  color="#FFFFFF" flat> 
+            <v-card  class="pa-5 mx-5"  color="#FFFFFF" flat> 
                 <v-row>
                     <v-img :src="ShadowImg"  />   
                 </v-row>
@@ -14,7 +14,7 @@
                     </v-col>                
                 </v-item>
             </v-card>
-            <v-card  class="px-5 mx-5 "  color="#FFFFFF" flat> 
+            <v-card  class="pa-5 mx-5 "  color="#FFFFFF" flat> 
                 <v-row>
                     <v-img :src="OutlineImg" />   
                 </v-row>
@@ -27,7 +27,7 @@
                     </v-col>                
                 </v-item>
             </v-card>
-            <v-card  class="px-5 mx-5"  color="#FFFFFF" flat> 
+            <v-card  class="pa-5 mx-5"  color="#FFFFFF" flat> 
                 <v-row>
                     <v-img :src="BothImg" />  
                 </v-row>
