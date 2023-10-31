@@ -146,14 +146,14 @@
 		<v-row>
 			<v-text-field 
          
-				class="ma-4"
+				class="ma-3"
 				v-model="xtrainfo"
 				placeholder="Extra Info"
 				label="Extra Info"
 				outlined  >          
                 <template v-slot:label>
-                 <h2>Extra Info</h2>
-    </template>
+                 <h3>Extra Info</h3 >
+                </template>
 			</v-text-field> 
 		</v-row> 
     </v-container>
@@ -400,8 +400,10 @@ export default {
 }
 </script>
 <style >
-h2{
+h3{
     color:#069 ;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .custom-placeholder-color input::placeholder {
   color: red !important;
