@@ -1,5 +1,7 @@
 <template>    
-    <v-container >    
+    <v-container >
+
+        
         <MultilayerName class="my-n7" mscale="1" />
         <DisplayButtons class="my-n6"/>
     </v-container>
@@ -15,5 +17,9 @@ export default {
     components: {
       DisplayButtons, MultilayerName
     },
+    mounted () {
+      console.log(this.$vuetify.breakpoint)
+    },
+
 };
 </script>

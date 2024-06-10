@@ -4,6 +4,7 @@
     shaped
     :color="backcolor"
     :height="size()" >      
+  
         <span v-for=" (each,id) in astyle" :key="id"  >
             <p :style="each"  > {{getName()}} </p>
         </span>   

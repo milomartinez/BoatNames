@@ -1,6 +1,7 @@
 <template>
    
     <v-container  >   
+
         <v-row class="my-1">
             <v-col cols="3">
                 <h2 >Order Boat Names</h2>
@@ -78,7 +79,7 @@
                         <v-col cols="12" md="5">
                             <v-row class="justify-start ">
                                 <a class="ma-2">
-                                    For 2 boats names, select quantity 2 etc
+                                    For 2 boat names, select quantity 2 etc
                                 </a>
                             </v-row>
                             <v-row class="ma-auto" style="font-size:11px">

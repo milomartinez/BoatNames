@@ -237,6 +237,7 @@ export default new Vuex.Store({
 			xhttp.send();	
 		},
 
+	
 		addLiferingToCart:function(ctx){
 
 			var product	 = ctx.state.design_products.liferingname;
@@ -249,6 +250,17 @@ export default new Vuex.Store({
 			smsg = smsg.replace("{liferingtop}",ctx.state.lifering_uptxt);
 			smsg = smsg.replace("{liferingbottom}",ctx.state.lifering_bottomtxt);
 		
+			console.log(variation_id);
+			console.log(product);
+			var att_amount;
+			for(var i= 0; i <product.variations.length; i++ ){
+				if(product.variations[i].id == variation_id){
+					att_amount = product.variations[i].attribute_amount.substring(0, 1);
+					break;
+				}
+			}
+			console.log(att_amount);
+			//smsg += "&quantity="+att_amount
 			var self = ctx.state;   
 
 			var xhttp = new XMLHttpRequest();
@@ -308,5 +320,6 @@ export default new Vuex.Store({
 		},	
 	},
 	modules: {
-	}
+	},
+
 })
