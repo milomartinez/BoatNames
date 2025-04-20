@@ -10,16 +10,20 @@
                 <h2 >{{titles[msg_popups.data]}} added to the cart</h2>
             </v-row>
             <v-row align="center" justify="center" class="my-6 mt-10">
-                <v-btn 
-                    @click="return2Design()"
-                    class="primary mx-2">
-                    Return to Design
-                </v-btn> 
-                <v-btn 
-                    @click="go2Cart()"
-                    class="primary mx-2">
-                    Go to Cart
-                </v-btn> 
+                <v-col cols="12" md="6">
+                    <v-btn 
+                        @click="return2Design()"
+                        class="primary ma-2">
+                        Return to Design
+                    </v-btn> 
+                </v-col>
+                <v-col  cols="12" md="6">
+                    <v-btn 
+                        @click="go2Cart()"
+                        class="primary ma-2">
+                        Go to Cart
+                    </v-btn> 
+                </v-col>
             </v-row>
         </v-card>
     </v-card>
