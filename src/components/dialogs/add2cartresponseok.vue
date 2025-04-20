@@ -10,14 +10,14 @@
                 <h2 >{{titles[msg_popups.data]}} added to the cart</h2>
             </v-row>
             <v-row align="center" justify="center" class="my-6 mt-10">
-                <v-col cols="12" md="6">
+                <v-col cols="12" md="6" class="d-flex justify-center">
                     <v-btn 
                         @click="return2Design()"
                         class="primary ma-2">
                         Return to Design
                     </v-btn> 
                 </v-col>
-                <v-col  cols="12" md="6">
+                <v-col  cols="12" md="6"  class="d-flex justify-center">
                     <v-btn 
                         @click="go2Cart()"
                         class="primary ma-2">

@@ -17,6 +17,7 @@ export default {
 		dialog:{
 			get: function() {                
 				var result = (this.msg_popups.type != null ) ;
+				//result = true; // just for testing, force dialog to be open
 				return    result  
 			},
 			set: function(value) {
