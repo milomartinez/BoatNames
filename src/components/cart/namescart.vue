@@ -3,10 +3,10 @@
     <v-container  >   
 
         <v-row class="my-1">
-            <v-col cols="3">
+            <v-col cols="12" md="">
                 <h2 >Order Boat Names</h2>
             </v-col>
-            <v-col cols="6">
+            <v-col cols="12" md="6">
           
                     <v-card  color="blue" width="100%" class="justify-center">
                     <v-card-title primary-title class="justify-center white--text" style="word-break: break-word" >
@@ -30,12 +30,11 @@
                 outlined>
                 <v-container class="ma-4">
                     <v-row>
-                        <v-col cols="12" md="5"></v-col>
-                        <v-col cols="6" md="3"></v-col>
-                        <v-col cols="6" md="4"> <a class="mx-1">We will compress back ONLY if it is longer</a></v-col>
-
-
+                        <v-col cols="0" md="6"></v-col>
+         
+                        <v-col cols="12"  md="6"> <a class="mx-1">We will compress back ONLY if it is longer</a></v-col>
                     </v-row>
+
                     <v-row class="my-1">
                         <v-col cols="12" md="5">
                             <v-row class="justify-start  mt-n4">
@@ -49,10 +48,10 @@
                                 </span>
                             </v-row>
                         </v-col>
-                        <v-col cols="6" md="3" class="" >
+                        <v-col cols="12" md="3"  >
                   
                             <v-select
-                           
+                              class="mr-4"
                                 item-text="text"
                                 v-model="each.selected"
                                 :items="mesHeight"
@@ -63,7 +62,7 @@
                             </v-select>
                         </v-col>
                     
-                        <v-col cols="6" md="4">
+                        <v-col cols="12" md="4">
                           
                             <v-text-field 
                             
@@ -92,33 +91,35 @@
                         <v-col cols="12" md="7">
                             <v-row>
                                    
-                                <v-col cols="4" >
+                                <v-col cols="12" md="4" >
                                     <v-row align="center" justify="center" class="mx-auto">
-                                
-                     
-                            <v-select
-                          
-                                v-model="each.qty"
-                                :items="comboQty"
-                                item-text="text"
-                                item-value="value"
-                                outlined 
-                                label="Quantity"                       
-                                >                
-                            </v-select>
-                            </v-row>
+                                              
+                                        <v-select  
+                                        class="mr-4"                        
+                                        v-model="each.qty"
+                                        :items="comboQty"
+                                        item-text="text"
+                                        item-value="value"
+                                        outlined 
+                                        label="Quantity"                       
+                                        >   </v-select>
+                                    </v-row>
                                 </v-col>
                                 
-                                <v-col cols="8" > 
-                                    <v-row  >                                  
-                                        <h2 class="mx-1 my-1 ">Price:</h2>
-                                        <v-card  >
-                                            <v-card-title primary-title class="justify-center">
-                                            <a v-if="current_price !=  null">
-                                                {{(each.qty*current_price[id]).toLocaleString('us-US', { style: 'currency', currency: 'AUD' }) }}
-                                            </a>  
-                                        </v-card-title>
-                                        </v-card> 
+                                <v-col cols="12" md="8" > 
+                                    <v-row class="mr-3" >        
+                                        <v-col cols="5">                          
+                                            <h2 class="mx-1 my-1 ">Price:</h2>
+                                        </v-col>   
+                                        <v-col cols="7"> 
+                                            <v-card  >
+                                                <v-card-title primary-title class="justify-center">
+                                                    <a v-if="current_price !=  null">
+                                                    {{(each.qty*current_price[id]).toLocaleString('us-US', { style: 'currency', currency: 'AUD' }) }}
+                                                    </a>  
+                                                </v-card-title>
+                                            </v-card> 
+                                    </v-col> 
                                     </v-row>    
 
                                   
@@ -257,7 +258,11 @@ export default {
    
             return this.namesdata['boatname'].items
 
-        }
+        },
+
+        currentBreakpoint() {
+      return this.$vuetify.breakpoint.name;
+    }
          
         
     },
