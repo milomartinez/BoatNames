@@ -65,8 +65,7 @@
                         <v-col cols="12" md="4">
                           
                             <v-text-field 
-                            
-                                class="mr-4"
+                                class="mr-4 auto-size-label"
                                 v-model="each.maxlength"
                                 label="Set Max Length (Optional)"
                                 outlined  >        
@@ -108,13 +107,13 @@
                                 
                                 <v-col cols="12" md="8" > 
                                     <v-row class="mr-3" >        
-                                        <v-col cols="5">                          
+                                        <v-col cols="12" md="5">                          
                                             <h2 class="mx-1 my-1 ">Price:</h2>
                                         </v-col>   
-                                        <v-col cols="7"> 
+                                        <v-col cols="12" md="7"> 
                                             <v-card  >
                                                 <v-card-title primary-title class="justify-center">
-                                                    <a v-if="current_price !=  null">
+                                                    <a  class="auto-size-link" v-if="current_price !=  null">
                                                     {{(each.qty*current_price[id]).toLocaleString('us-US', { style: 'currency', currency: 'AUD' }) }}
                                                     </a>  
                                                 </v-card-title>
@@ -419,5 +418,20 @@ h3{
 .custom-label-color .v-label {
   color: red;
   opacity: 1;
+}
+
+.auto-size-label .v-label {
+  white-space: nowrap;
+  font-size: calc(12px + 0.3vw); /* Tamaño base + ajuste responsivo */
+  transform-origin: left center;
+}
+
+.auto-size-link {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: clamp(12px, 3vw, 36px); /* Tamaño mínimo, adaptable, máximo */
 }
 </style>

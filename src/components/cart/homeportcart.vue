@@ -26,6 +26,7 @@
                         <v-text-field 
                             v-model="each.maxlength"
                             label="Set Max Length (Optional)"
+                            class="auto-size-label"
                             outlined  >        
                         </v-text-field> 
                     </v-col>                   
@@ -34,13 +35,17 @@
                     <v-container class="mx-4 mt-n6" >   
                         <v-row justify="center" align="center">     
                             <v-spacer></v-spacer>          
-                            <h2 >Price:</h2>
+                            <v-col cols="12" md="5">
+                                <h2 >Price:</h2>
+                            </v-col>
+                            <v-col cols="12" md="7">
                             <v-card  class="mx-2" min-width="120px" min-height="50" >
                                <v-card-title primary-title class="justify-center">
-                                   <a v-if="prices.HomePort[id]!= null"> {{prices.HomePort[id].toLocaleString('us-US', { style: 'currency', currency: 'AUD' }) }}</a>  
+                                   <a   class="auto-size-link" v-if="prices.HomePort[id]!= null"> {{prices.HomePort[id].toLocaleString('us-US', { style: 'currency', currency: 'AUD' }) }}</a>  
                                </v-card-title>
                                
                             </v-card>  
+                            </v-col>
                             <v-btn class="primary "
                                 
                                 @click="add2Cart( each)"
@@ -62,13 +67,17 @@
                     <a class="mx-4">Lifering</a>         
                     <v-container class="mx-4 mt-n6" >    
                         <v-row justify="center" align="center">  
-                            <v-spacer></v-spacer>        
-                            <h2 class="mx- my-1 ">Price:</h2>
+                            <v-spacer></v-spacer>   
+                            <v-col cols="12" md="5">    
+                                <h2 class="mx- my-1 ">Price:</h2>
+                            </v-col> 
+                            <v-col cols="12" md="7"> 
                             <v-card class="mx-2" min-width="120px" min-height="50" >
                                 <v-card-title primary-title class="justify-center">
-                                    <a v-if="liferingprice!= null"> {{liferingprice.toLocaleString('us-US', { style: 'currency', currency: 'AUD' })}} </a>  
+                                    <a class="auto-size-link" v-if="liferingprice!= null"> {{liferingprice.toLocaleString('us-US', { style: 'currency', currency: 'AUD' })}} </a>  
                                 </v-card-title>                        
                             </v-card>  
+                            </v-col>
                             <v-btn class="primary "
                                 @click="addLifering2Cart"
                                 :disabled="liferingprice == null" >
@@ -79,28 +88,25 @@
                 </v-row>
             </div>
         </v-card>
-       <v-card
+       <v-card 
             class="ma-2 pa-2"
             outlined>
             <div class="ma-2">
-            <v-row>
-                <a class="mx-4">Tender</a>
-                <v-container class="mx-4 mt-n6" >
-                <v-row justify="center" align="center">
-                <v-spacer></v-spacer>          
-                <h2 class="mx- my-1 ">Price:</h2>
-                <v-card 
-                    class="mx-2"
-                    width="120px" 
-                    height="50px">
-                    <v-container align="center" justify="center">
-                        <v-row align="center" justify="center">
-                      
-                            <a v-if="tenderprice!= null"> {{tenderprice.toLocaleString('us-US', { style: 'currency', currency: 'AUD' })}} </a>  
-                           
-                        </v-row>
-                    </v-container>
-                </v-card>  
+                <v-row>
+                    <a class="mx-4">Tender</a>
+                        <v-container class="mx-4 mt-n6" >
+                            <v-row justify="center" align="center">
+                            <v-spacer></v-spacer>    
+                            <v-col cols="12" md="5">    
+                                <h2 class="mx- my-1 ">Price:</h2>
+                        </v-col>
+                        <v-col cols="12" md="7">    
+                            <v-card class="mx-2" min-width="120px" min-height="50" >
+                                <v-card-title primary-title class="justify-center">
+                                    <a class="auto-size-link" v-if="tenderprice!= null"> {{tenderprice.toLocaleString('us-US', { style: 'currency', currency: 'AUD' })}} </a>  
+                                </v-card-title>
+                            </v-card>  
+                        </v-col>
                 <v-btn class="primary"
                
                     :disabled="tenderprice == null"
@@ -297,5 +303,19 @@ export default {
 <style scoped>
 h2{
     color:#069 ;
+}
+.auto-size-label .v-label {
+  white-space: nowrap;
+  font-size: calc(12px + 0.3vw); /* Tamaño base + ajuste responsivo */
+  transform-origin: left center;
+}
+
+.auto-size-link {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: clamp(12px, 3vw, 24px); /* Tamaño mínimo, adaptable, máximo */
 }
 </style>

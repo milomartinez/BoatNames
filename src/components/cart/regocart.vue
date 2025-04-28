@@ -50,6 +50,7 @@
                             <v-text-field                             
                                 v-model="each.maxlength"
                                 label="Set Max Length (Optional)"
+                                 class="auto-size-label"
                                 outlined  >        
                             </v-text-field> 
                         </v-col>
@@ -58,13 +59,17 @@
                     <v-row>                                  
                     <v-container class="mx-4 mt-n6" >   
                             <v-row justify="center" align="center">     
-                                <v-spacer></v-spacer>          
+                                <v-spacer></v-spacer>       
+                                <v-col cols="12" md="5">   
                                 <h2 class="mx-2 my-1 ">Price:</h2>
+                                </v-col>
+                                <v-col cols="12" md="5">
                                 <v-card width="120px">
                                     <v-card-title primary-title class="justify-center">
-                                            <a v-if="prices.RegoNumber[id]!=null">{{prices.RegoNumber[id].toLocaleString('us-US', { style: 'currency', currency: 'AUD' })   }}</a>  
+                                            <a  class="auto-size-link" v-if="prices.RegoNumber[id]!=null">{{prices.RegoNumber[id].toLocaleString('us-US', { style: 'currency', currency: 'AUD' })   }}</a>  
                                    </v-card-title>
                                 </v-card>  
+                                </v-col>
                                 <v-btn                                     
                                     :disabled="!each.bt_enable"
                                     @click="add2Cart(id, each)"
@@ -296,5 +301,20 @@ export default {
 <style scoped>
 h2{
     color:#069 ;
+}
+
+.auto-size-label .v-label {
+  white-space: nowrap;
+  font-size: calc(12px + 0.3vw); /* Tamaño base + ajuste responsivo */
+  transform-origin: left center;
+}
+
+.auto-size-link {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: clamp(12px, 3vw, 24px); /* Tamaño mínimo, adaptable, máximo */
 }
 </style>
