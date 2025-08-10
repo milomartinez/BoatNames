@@ -58,15 +58,14 @@ export default new Vuex.Store({
 	actions: {
 		updateDesignProducts(ctx, _products){
 
-			ctx.state.design_products = {};
-			console.log("_products:",_products);
-			
+			ctx.state.design_products = {};						
 			for (var each in _products.designproducts ) {
 				var prod = _products.designproducts[each];
 				ctx.state.design_products[prod.product] = prod;
 			}    
-	console.log("ctx.state.design_products:",ctx.state.design_products);
+		
 		},
+
 		updateDesignData(ctx, _designData){
 
 			ctx.state.design_data = {}
@@ -75,10 +74,12 @@ export default new Vuex.Store({
 				ctx.state.design_data [p.type] = p;
 			}
 		},
+
 		updateReady(ctx, ){
 
 			ctx.state.ready++;
 		},
+		
 		addNamesToCart:function(ctx, obj) {			
 			
 			//console.log(obj)
