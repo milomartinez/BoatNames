@@ -5,7 +5,8 @@
         placeholder="Your Boat Name"
         label="Your Boat Name"
         v-model="input_boatname"
-        @input="onChange(input_boatname)"        
+        @input="onChange(input_boatname)"   
+   
         outlined  >        
       </v-text-field>      
     </v-col>
@@ -30,15 +31,21 @@ export default {
 	
 	methods: {
 		onChange (){
+	
 			this.$store.state.current_display =  "BoatName";
 			this.addable.names.bt_visible = true;
+			console.log("(this.input_boatname.:"+this.input_boatname);
 			if(this.input_boatname.length == 0) {
+					
 				this.input_boatname = null;
 				this.addable.names.bt_visible = false;
 				this.design_displays.BoatName.text = "Your Boat Name";
+					
 			}
 			else {
+					console.log("1");
 				this.design_displays.BoatName.text = this.input_boatname;
+					console.log("2");
 			}
 		}		
 	},

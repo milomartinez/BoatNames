@@ -18,7 +18,7 @@ export default {
       DisplayButtons, MultilayerName
     },
     mounted () {
-      console.log(this.$vuetify.breakpoint)
+      //console.log(this.$vuetify.breakpoint)
     },
 
 };

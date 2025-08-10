@@ -1,0 +1,5 @@
+.v-text-field input,
+.v-input__control {
+  border: none !important;
+  box-shadow: none !important;
+}

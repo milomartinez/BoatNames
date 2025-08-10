@@ -1,5 +1,5 @@
 <template>
-    <v-btn text icon color="indigo" @click="onclick">
+    <v-btn text icon color="indigo" @click="onclick"   style="background-color: transparent; box-shadow: none; border-color: transparent;">
       <v-icon>mdi-help-circle-outline</v-icon>
     </v-btn>
 </template>

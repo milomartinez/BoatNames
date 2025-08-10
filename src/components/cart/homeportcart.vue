@@ -25,9 +25,10 @@
                     <v-col cols="6" md="4">
                         <v-text-field 
                             v-model="each.maxlength"
-                            label="Set Max Length (Optional)"
+                            label="RESTRICT Lenght (Optional)"
                             class="auto-size-label"
                             outlined  >        
+
                         </v-text-field> 
                     </v-col>                   
                 </v-row>

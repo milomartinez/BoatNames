@@ -112,7 +112,9 @@ export default {
             var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
 				if (xhttp.readyState == 4 && xhttp.status == 200) {
+             
                     var response =  JSON.parse(xhttp.responseText)
+                        console.log("response:",response)
                     this.carttotal = response.carttotal
                 //    console.log("response:",response)
                  //   console.log("arttotal:",this.carttotal)

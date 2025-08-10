@@ -32,7 +32,7 @@
                     <v-row>
                         <v-col cols="0" md="6"></v-col>
          
-                        <v-col cols="12"  md="6"> <a class="mx-1">We will compress back ONLY if it is longer</a></v-col>
+                        <v-col cols="12"  md="6"> <a class="mx-1 red--text">We will compress back ONLY if it is longer</a></v-col>
                     </v-row>
 
                     <v-row class="my-1">
@@ -67,7 +67,7 @@
                             <v-text-field 
                                 class="mr-4 auto-size-label"
                                 v-model="each.maxlength"
-                                label="Set Max Length (Optional)"
+                                label="RESTRICT Lenght (Optional)"
                                 outlined  >        
                             </v-text-field> 
                         </v-col>
@@ -230,13 +230,14 @@ export default {
 
         design_displays: {
             handler(dd){
-            
+                console.log(this.namesdata)
                 // do stuff
                 this.namesdata.boatname.bt_enable = true
+                   console.log("dd:"+dd)
                 if(dd.BoatName.text == null || dd.BoatName.text == "Your Boat Name" ){
                     this.namesdata.boatname.bt_enable = false
                 }
-                            
+                        console.log("2")      
                 this.updatePrices()
 
             },
@@ -316,15 +317,18 @@ export default {
         },
 
         updatePrices(){
-             this.current_price = {}
-               for(var name in this.namesdata){
+            this.current_price = {}
+            console.log("this.namesdata : "+ this.namesdata);
+            for(var name in this.namesdata){
             
                 var each    = this.namesdata[name]   
                 var obj     = {}
-                obj.selected=each.selected
+                obj.selected = each.selected
                 obj.tag     = name
+         
                 var tmp = this.getNamePrice(obj)
-               this.prices.BoatName[name]   = (tmp  == null)?null:this.getNamePrice(obj).price
+   
+                this.prices.BoatName[name]   = (tmp  == null)?null:this.getNamePrice(obj).price
 
                if(this.prices.BoatName[name]  == null)
                this.current_price[name] = 0
@@ -342,13 +346,16 @@ export default {
             var tag = obj.tag;
 			var selection = obj.selected;
 			this.cart[tag] = {};
-			this.cart[tag].id =this.design_products[tag].id;
+
+            console.log("tag:",tag)
+            console.log("this.design_products:",this.design_products)
+			this.cart[tag].id = this.design_products[tag].id;
 
 
 			var tmp = this.design_products[tag].variations;
      
 			tmp = tmp.filter(function(v){return selection == v.attribute_size});
-		
+        
 			var design_tmp = this.design_displays['BoatName']
 
 			var aColor = []; 

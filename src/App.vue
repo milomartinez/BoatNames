@@ -60,21 +60,11 @@ export default {
 		...mapActions(['updateReady', 'updateDesignProducts','updateDesignData']),
 		processProducts(){
 			this.updateDesignProducts(this.products);
-			/*this.$store.state.design_products = {};
-			//console.log(this.products.designproducts)
-			for (var each in this.products.designproducts ) {
-				var prod = this.products.designproducts[each];
-				this.$store.state.design_products[prod.product] = prod;
-			}  */  
+
 		},
 
 		processDesignData() {
 			this.updateDesignData(this.design_data);
-			/*this.$store.state.design_data = {}
-			for(var each in this.design_data.regonumbers) {
-				var p = this.design_data.regonumbers[each];
-				this.$store.state.design_data [p.type] = p;
-			}*/
 		}
 	},
 
@@ -96,6 +86,7 @@ export default {
 		this.processProducts();	
 		this.updateReady( true);
 		var xhttp1 = new XMLHttpRequest();
+		
 		xhttp1.onreadystatechange = function() {
 		
 			if (xhttp1.readyState == 4 && xhttp1.status == 200) {
@@ -116,53 +107,33 @@ export default {
 		//xhttp1.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; UTF-8");
 		xhttp1.send();	
 
-/*
-	
-		var dataError = false;
-		try{
-		var response1 = await axios.get("/design/data.json") 
-		}catch(err){
 
-			this.design_data = jDesignData
-			dataError = true;
-		}
-		
-		if(!dataError)
-		this.design_data = response1.data
-		console.log("design data:",this.design_data);
-		this.processDesignData();
-*/
+
+		console.log("req desig products")
 		
 		var xhttp2 = new XMLHttpRequest();
 		xhttp2.onreadystatechange = function() {
+				console.log("readyState:"+xhttp2.readyState+" status:"+xhttp2.status)
 			if (xhttp2.readyState == 4 && xhttp2.status == 200) {
-					this.products =  JSON.parse(xhttp2.responseText)
-					//console.log("1. products:",xhttp2.responseText)
-					//console.log("2. products:",this.products )
-					this.processProducts();		
-					this.updateReady( true);
+			
+				//console.log("1. responseText:",xhttp2.responseText)
+				//console.log("1. response:",xhttp2.response)
+				//console.log("1. responseType:",xhttp2.responseType)
+				this.products =  JSON.parse(xhttp2.responseText)
+				//console.log("2. products:",this.products )
+				this.processProducts();		
+				this.updateReady( true);
 
 			}
 		}.bind(this)
 		
-		xhttp2.open("POST", "/designproductdata/", true);
-		xhttp2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; UTF-8");
+		var endpoint = "https://www.boatnames.com.au/wp-json/custom-api/v1/products";
+		//	xhttp2.open("POST", "/designproductdata/", true);
+		//var endpoint = "/api/wp-json/custom-api/v1/products";
+		xhttp2.open("GET", endpoint, true);
+		//xhttp2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; UTF-8");
 		xhttp2.send();	
-	/*	var productError = false;
-		try{
-		var reponse2 = await axios.post("/designproductdata/",true) 
-		}
-		catch(err){
-			productError = true;
-			this.products = jProducts
-		}
-		if(!productError)
-		this.products = reponse2.data;
-		
-		console.log("products:",this.products);
-		this.processProducts();	*/
 
-		console.log("2023-01-23 v1");
 	},    
 
 	updated(){

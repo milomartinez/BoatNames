@@ -59,12 +59,13 @@ export default new Vuex.Store({
 		updateDesignProducts(ctx, _products){
 
 			ctx.state.design_products = {};
-			//console.log(this.products.designproducts)
+			console.log("_products:",_products);
+			
 			for (var each in _products.designproducts ) {
 				var prod = _products.designproducts[each];
 				ctx.state.design_products[prod.product] = prod;
 			}    
-
+	console.log("ctx.state.design_products:",ctx.state.design_products);
 		},
 		updateDesignData(ctx, _designData){
 
