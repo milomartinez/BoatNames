@@ -32,7 +32,7 @@
                     <v-row>
                         <v-col cols="0" md="6"></v-col>
          
-                        <v-col cols="12"  md="6"> <a class="mx-1 red--text">We will compress back ONLY if it is longer</a></v-col>
+                        <v-col cols="12"  md="6"> <a class="mx-1 red--text">We will Restrict the Length to this ONLY if it is longe</a></v-col>
                     </v-row>
 
                     <v-row class="my-1">
