@@ -79,7 +79,7 @@ export default new Vuex.Store({
 
 			ctx.state.ready++;
 		},
-		
+
 		addNamesToCart:function(ctx, obj) {			
 			
 			//console.log(obj)
@@ -140,6 +140,7 @@ export default new Vuex.Store({
 			
 			xhttp.open("POST", smsg, true);
 			xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; UTF-8");
+			console.log( "send:"+smsg)
 			xhttp.send();	
 		},
 

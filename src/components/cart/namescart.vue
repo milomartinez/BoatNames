@@ -230,14 +230,13 @@ export default {
 
         design_displays: {
             handler(dd){
-                console.log(this.namesdata)
+
                 // do stuff
                 this.namesdata.boatname.bt_enable = true
-                   console.log("dd:"+dd)
                 if(dd.BoatName.text == null || dd.BoatName.text == "Your Boat Name" ){
                     this.namesdata.boatname.bt_enable = false
                 }
-                        console.log("2")      
+     
                 this.updatePrices()
 
             },
@@ -287,7 +286,7 @@ export default {
         add2Cart(each, id){
 
             each.bt_enable = false;
-           // console.log( this.namesdata[id])
+            console.log( "addNamesToCart")
 
             this.addNamesToCart( {name:id, class: this.namesdata[id] });
             this.removeFromCart(id);
@@ -328,7 +327,7 @@ export default {
          
                 var tmp = this.getNamePrice(obj)
    
-                this.prices.BoatName[name]   = (tmp  == null)?null:this.getNamePrice(obj).price
+                this.prices.BoatName[name]   = (tmp  == null)?null:tmp.price
 
                if(this.prices.BoatName[name]  == null)
                this.current_price[name] = 0
