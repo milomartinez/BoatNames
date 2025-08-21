@@ -30,9 +30,9 @@
                 outlined>
                 <v-container class="ma-4">
                     <v-row>
-                        <v-col cols="0" md="6"></v-col>
-         
-                        <v-col cols="12"  md="6"> <a class="mx-1 red--text">We will Restrict the Length to this ONLY if it is longe</a></v-col>
+                        <v-col cols="12" md="5"></v-col>
+                        <v-col cols="12" md="3"></v-col>         
+                        <v-col cols="12" md="4"> <a class="mx-1 red--text font-weight-bold">We will Restrict the Length to this ONLY if it is longe</a></v-col>
                     </v-row>
 
                     <v-row class="my-1">
