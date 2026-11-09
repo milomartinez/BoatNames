@@ -59,14 +59,30 @@ export default {
 	methods: {
 		...mapActions(['updateReady', 'updateDesignProducts','updateDesignData']),
 		processProducts(){
+      console.log("process products")
 			this.updateDesignProducts(this.products);
 
 		},
 
 		processDesignData() {
 			this.updateDesignData(this.design_data);
-		}
-	},
+		},
+
+    sendMessage:function ( method,  endpoint, callbackFunc) {
+      let httpReq = new XMLHttpRequest();
+      httpReq.onreadystatechange = function() {
+        if( httpReq.readyState === 4 ){
+          console.log("endpoint:"+endpoint+" status:"+httpReq.status)
+          callbackFunc(httpReq)
+        }
+      }.bind(this)
+
+      httpReq.open(method, endpoint, true);
+      httpReq.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; UTF-8");
+      httpReq.send()
+    },
+
+  },
 
 	beforeCreate:function() {
 		this.$store.state.pickable_colors = jColors; 
@@ -82,7 +98,7 @@ export default {
     this.updateReady( )
   },
 
-	created:  function()  {
+	beforeMount:  function()  {
 
 		this.design_data = jDesignData
 		this.products = jProducts
@@ -116,7 +132,7 @@ export default {
 
 
 		console.log("req design products")
-		
+		/*
 		let httpReq = new XMLHttpRequest();
     httpReq.onreadystatechange = function() {
 				console.log("readyState:"+httpReq.readyState+" status:"+httpReq.status)
@@ -137,8 +153,42 @@ export default {
 		var endpoint = "https://www.boatnames.com.au/wp-json/custom-api/v1/products";
     httpReq.open("GET", endpoint, true);
     httpReq.send();
+*/
+   // xhttp2.open("POST", "/designproductdata/", true);
+   // xhttp2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; UTF-8");
+    var endpoint = "https://www.boatnames.com.au/wp-json/custom-api/v1/products";
+    this.sendMessage("GET",endpoint,
+        function (httpReq){
+          if (httpReq.readyState === 4 && httpReq.status === 200) {
+          console.log("1. responseText:",httpReq.responseText)
+          this.products =  JSON.parse(httpReq.responseText)
+          console.log("2. products:",this.products )
+          this.processProducts();
+        }
+        this.updateReady( )
+    }.bind(this))
 
-	},
+    this.sendMessage("POST", "/designproductdata/",
+        function (httpReq){
+          if (httpReq.readyState === 4 && httpReq.status === 200) {
+            console.log("1. responseText:",httpReq.responseText)
+
+          }
+
+        }.bind(this)
+    )
+
+    this.sendMessage("GET", "/wp-json/custom-api/v1/products",
+        function (httpReq){
+          if (httpReq.readyState === 4 && httpReq.status === 200) {
+            console.log("1. responseText:",httpReq.responseText)
+
+          }
+
+        }.bind(this)
+    )
+
+  },
 
 
 	updated(){

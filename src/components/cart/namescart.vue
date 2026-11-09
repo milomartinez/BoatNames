@@ -286,7 +286,7 @@ export default {
         add2Cart(each, id){
 
             each.bt_enable = false;
-            console.log( "addNamesToCart")
+           // console.log( "addNamesToCart")
 
             this.addNamesToCart( {name:id, class: this.namesdata[id] });
             this.removeFromCart(id);
@@ -317,7 +317,7 @@ export default {
 
         updatePrices(){
             this.current_price = {}
-            console.log("this.namesdata : "+ this.namesdata);
+         //   console.log("this.namesdata : "+ this.namesdata);
             for(var name in this.namesdata){
             
                 var each    = this.namesdata[name]   
@@ -346,8 +346,8 @@ export default {
 			var selection = obj.selected;
 			this.cart[tag] = {};
 
-            console.log("tag:",tag)
-            console.log("this.design_products:",this.design_products)
+    //        console.log("tag:",tag)
+    //        console.log("this.design_products:",this.design_products)
 			this.cart[tag].id = this.design_products[tag].id;
 
 
