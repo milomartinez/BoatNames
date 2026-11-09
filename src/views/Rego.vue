@@ -26,7 +26,7 @@
 					<RegoColours />
 				</v-col>
 				<v-col cols="1" justify="center">
-					<HelpTipBt id=10 />
+				<!--	<HelpTipBt id=10 /> -->
 				</v-col>
 			</v-row> 
 

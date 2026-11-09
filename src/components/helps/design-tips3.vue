@@ -1,31 +1,30 @@
+<script setup>
+</script>
 <template>
 <v-container>
-    <v-card outlined class="pa-4"> 
-        <v-row align="center" class="mx-3">
-            <h1>Colours</h1>
-            <v-spacer></v-spacer>
-            <a class="mx-2">3</a>
-        </v-row>
+    <v-card outlined class="pa-4">
+      <v-row align="center" class="ma-2">
+        <h2>Hint — Choose Your Name and Boat Colour</h2>
+      </v-row>
         <v-row>
-            <v-col align="center">
+            <v-col  class="text-justify">
                 <a>
-                    The colour is in the Design Tool allow you to set the different colours of items you are designing.
+                  Name Colour sets the main colour of your lettering.
+                  Boat Colour changes the preview background. Choose a colour close to your hull so you can see how well your lettering stands out.
+
                 </a>
             </v-col>
         </v-row>
          <v-row>
-            <v-col align="center">
-                 <v-img :src="require('@/assets/images/designtip/DesignTipImage_5.png')" max-width="626px" />
+            <v-col >
+                 <v-img :src="require('@/assets/images/tips/tip3_1.png')" contain  max-width="100%"/>
             </v-col>
         </v-row>
          <v-row>
-            <v-col align="center">
+            <v-col  class="text-justify" >
                 <a>
-                   On this page you can change the colour of your Boat Name and also the colour of you 'Boat' (Background).
-                   This allows you to see what your design will look when in place on your boat.
-                   <br /> <br /> <br />
-                   You boat name comes pre-spaced all lined on with a front application papper to hold everything in place while 
-                   you apply it. So the background colour is not anothe layer of vinyl it is your actual boat colour.
+                  The background is not part of your sticker. Your boat supplies the background—there is no solid coloured rectangle behind the name.
+                  Your lettering arrives pre-spaced and correctly aligned, with application tape holding everything in position while you install it.
                 </a>
             </v-col>
         </v-row>

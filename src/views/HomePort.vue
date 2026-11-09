@@ -17,7 +17,9 @@
 					<ColourPick />
 				</v-col>
 				<v-col cols="1">
+          <!--
 					<HelpTipBt id=12 />
+					-->
 				</v-col>
 			</v-row>
 			<v-row>
@@ -32,15 +34,17 @@
 				</v-row>
 				</v-col>
 				<v-col cols="1">
-				<HelpTipBt id=13 />
-				</v-col>
-			</v-row>
-			<v-row>
-				<HomeportCart />
-			</v-row>
-		</v-col>
+          <!--
+     <HelpTipBt id=13 />
+     -->
+     </v-col>
+   </v-row>
+   <v-row>
+     <HomeportCart />
+   </v-row>
+ </v-col>
 
-	</v-row>
+</v-row>
 </template>
 
 <script>
@@ -53,7 +57,7 @@ import PortInput      from "@/components/homeport/homeportinput.vue";
 import HelpTipBt      from "@/components/gui/helptipbt.vue";
 import HomeportCart   from '@/components/cart/homeportcart'
 export default {
-	name:"HomePort",
-	components: { PickFont,ColourPick,Lifering,Tender, HelpTipBt, PortInput, HomeportCart},    
+name:"HomePort",
+components: { PickFont,ColourPick,Lifering,Tender, HelpTipBt, PortInput, HomeportCart},
 };
 </script>

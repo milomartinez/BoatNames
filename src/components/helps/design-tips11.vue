@@ -1,6 +1,6 @@
 <template>
 <v-container>
-    <v-card outlined class="pa-4"> 
+    <v-card outlined class="pa-4">
         <v-row align="center" class="mx-3">
             <h1>Home Port</h1>
             <v-spacer></v-spacer>
@@ -8,24 +8,24 @@
         </v-row>
         <br/>
         <v-row>
-            <v-col align="center">
+            <v-col >
                 <v-img :src="require('@/assets/images/designtip/DesignTipImage_12.png')" max-width="465px" />
             </v-col>
         </v-row>
         <v-row>
-            <v-col align="center" class="mx-3">
+            <v-col  class="mx-3">
                 <a>
                 Set your Home Port Here.<br/>
                 </a>
             </v-col>
         </v-row>
         <v-row>
-            <v-col align="center">
+            <v-col >
                 <v-img :src="require('@/assets/images/designtip/DesignTipImage_13.png')" max-width="152px" />
             </v-col>
         </v-row>
         <v-row>
-            <v-col align="center" class="mx-6">
+            <v-col class="mx-6">
                 <a>
                 Choose the Letter Style for your Home Port here.<br/>
                 <br/>

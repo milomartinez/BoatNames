@@ -1,36 +1,34 @@
+<script setup>
+</script>
 <template>
 <v-container>
-    <v-card outlined class="pa-4"> 
-        <v-row align="center" class="mx-3">
-            <h1 >Registration Number</h1>
-            <v-spacer></v-spacer>
-            <a class="mx-2">8</a>
-        </v-row>
-        <br />
-        <v-row>
-            <v-col align="center" class="mx-3">
-                <a>
-                Choose the font to use with your Rego Numbers. 'Nice Block' is a standard font to use.
-                <br/><br/>
-                'Same Stle as Name' will set the font to the one used for your Boat Name.
-                <br /><br/>
-                Or choose Letter style to set an individual font style for your Rego numbers.
-                </a>
-            </v-col>   
-        </v-row>
-        <v-row>
-            <v-col align="center">
-                 <v-img :src="require('@/assets/images/designtip/DesignTipImage_11.png')" max-width="673px" />
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col align="center" class="mx-3">
-                <a>
-                For a customised look on small power boats it is usually best to choose "Nice Block" and us the same 
-                colour combinations that you have choosen for your boat name.
-                </a>
-            </v-col>
-        </v-row>
+    <v-card outlined class="pa-4">
+
+      <v-row align="center" class="ma-2">
+        <h2>Hint — Choose Your Rego Letter Style</h2>
+      </v-row>
+      <br />
+      <v-row>
+
+        <v-col class="text-justify mx-2">
+          <a>
+            Choose Nice Block for a simple, easy-to-read registration number.
+            Select Same Style as Name to use your boat-name font, or CHOOSE LETTER STYLE to select a different font.
+            For a coordinated look, try a clear block font with the same colour combination as your boat name. The two designs don’t need identical fonts to look good together.
+            Readability comes first: check your state’s rego requirements before choosing a decorative style.
+
+          </a>
+        </v-col>
+
+      </v-row>
+      <v-row>
+        <v-col>
+          <v-img :src="require('@/assets/images/tips/tip8_1.png')" contain  max-width="100%"/>
+        </v-col>
+      </v-row>
+
+
+
     </v-card>
 </v-container>
 </template>

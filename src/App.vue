@@ -8,7 +8,7 @@
 			</v-card>   
 			<v-sheet
 				class="overflow-y-auto "
-				max-height="600"
+
 				width="100%">
 				<v-container  height="100%" width="100%"  >  
 					<LoadingScreen />
@@ -116,7 +116,7 @@ export default {
 				console.log("readyState:"+xhttp2.readyState+" status:"+xhttp2.status)
 			if (xhttp2.readyState == 4 && xhttp2.status == 200) {
 			
-				//console.log("1. responseText:",xhttp2.responseText)
+				console.log("1. responseText:",xhttp2.responseText)
 				//console.log("1. response:",xhttp2.response)
 				//console.log("1. responseType:",xhttp2.responseType)
 				this.products =  JSON.parse(xhttp2.responseText)

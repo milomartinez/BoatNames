@@ -1,58 +1,36 @@
 <template>
 <v-container>
-    <v-card outlined class="pa-4"> 
-        <v-row align="center" class="mx-3">
-            <v-spacer></v-spacer>
-           <a> 1 </a>
-        </v-row>
-        <v-row >
-            <v-col align="center">
-                <a>
-                Enter your Boat name here. As you change the name the Display area above will change to show design.
-                </a>
-            </v-col>
-            <v-col justify="center">
-                <v-img :src="require('@/assets/images/designtip/DesignTipImage_0.png')" max-width="100%" />
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col align="center">
-                <v-img :src="require('@/assets/images/designtip/DesignTipImage_1.png')" max-width="155px" />
-            </v-col>
-            <v-col align="center">
-                <a>
-                You can use the var at the Top of the page to navigate around the Design tool. Just click on hte titles to go to that page
-                </a>
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col align="center">
-                <a>
-                You can also use 'Next' and 'Back' buttons to move between the Design pages. 
-                </a>
-            </v-col>
-            <v-col align="center">
-     
-                <v-row class="px-5"> 
-                    <v-img :src="require('@/assets/images/designtip/DesignTipImage_2.png')" max-width="93px" />
-                    <v-img :src="require('@/assets/images/designtip/DesignTipImage_3.png')" max-width="93px" />
-                </v-row>
+    <v-card outlined class="pa-4">
+      <v-row align="center" class="ma-2">
+        <h2> Hint - Enter Your Boat Name</h2>
 
-            </v-col>           
-        </v-row>
-            <v-col align="center">
-                <v-img :src="require('@/assets/images/designtip/DesignTipImage_6.png')" max-width="512px" />
-            </v-col >
-            
-        <v-row>
-            <v-col align="center">
+      </v-row>
+        <v-row >
+            <v-col  class="text-justify">
                 <a>
-                The buttons under the Dwsign Area let you change between your desigs, Boat name, Resgistration Numbers adn Home Port.
-                <br><br>
-                The Display size  slider let you change the size of the design - this does not affect the actual size of the completed design.
+                Type your boat name exactly as you want it to appear, including spaces, capital letters and lowercase letters.
+                The text is case-sensitive. For example, type SEA BREEZE for all capitals or Sea Breeze for a mix of capitals and lowercase letters.
+                The preview updates as you type, so you can see your design taking shape.
                 </a>
-            </v-col >
+
+                <v-img :src="require('@/assets/images/tips/tip1_1.png')" contain  max-width="100%"/>
+            </v-col>
         </v-row>
+        <v-row class="pa-2" >
+            <v-divider></v-divider>
+        </v-row>
+        <v-row>
+         <v-col class="text-justify" cols=6>
+           <a>
+           Use the BOAT NAME, REGO NUMBER and EXTRAS tabs to move around the designer.
+           Remember: changing the preview’s display size does not change the finished size of your lettering. Choose the actual size in the order section.
+           </a>
+         </v-col>
+         <v-col cols=6>
+           <v-img :src="require('@/assets/images/tips/tip1_2.png')" contain  max-width="100%"/>
+         </v-col>
+        </v-row>
+
     </v-card>
 </v-container>    
 </template>

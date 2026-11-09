@@ -5,8 +5,7 @@
         placeholder="Your Boat Name"
         label="Your Boat Name"
         v-model="input_boatname"
-        @input="onChange(input_boatname)"   
-   
+        @input="onChange(input_boatname)"
         outlined  >        
       </v-text-field>      
     </v-col>

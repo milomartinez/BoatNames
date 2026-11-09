@@ -1,30 +1,31 @@
+<script setup>
+</script>
 <template>
 <v-container>
     <v-card outlined class="pa-4"> 
-        <v-row align="center" class="mx-3">
-            <h1>Fonts</h1>
-            <v-spacer></v-spacer>
-            <a class="mx-2">2</a>
+        <v-row align="center" class="ma-2">
+            <h2> Hint - Choose Your Letter Style</h2>
+
         </v-row>
-        <v-row >
-            <v-col align="center">
+        <v-row  align="center"  justify="center">
+            <v-col class="text-justify">
                 <a>
-                    The Font Select allows you to change the style of your Boat Name. Just select the different fonts and watch 
-                    the design are at the top of the page change
-                    <br/>
-                    You can select different categories of fonts with the drop down at the top.
+                  Select CHOOSE LETTER STYLE to explore different fonts.
+                  Use the category menu to browse the styles, then select a font to see your boat name in that lettering.
+                  Try a few combinations to find a style that suits your boat and her name. Check that the wording is easy to read—not just attractive up close.
+
                 </a>
             </v-col>
         </v-row>
         <v-row>
             <v-col align="center">
-             <v-img :src="require('@/assets/images/designtip/DesignTipImage_22.png')" max-width="362px" />
+             <v-img :src="require('@/assets/images/tips/tip2_1.png')" contain  max-width="100%" />
             </v-col>
         </v-row>
         <v-row>
             <v-col align="center">
                 <a>
-                    Whe you have got the font you want, press the 'Close' button to exit the Font Window
+                  When you’re happy with your choice, select CLOSE to return to the designer.
                 </a>
             </v-col>
 
