@@ -8,6 +8,9 @@ module.exports = defineConfig({
   transpileDependencies: [
     'vuetify'
   ],
+  configureWebpack: {
+    devtool: 'source-map'
+  },
 
   ...(isDev && {
     devServer: {

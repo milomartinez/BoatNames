@@ -75,7 +75,7 @@ export default new Vuex.Store({
 			}
 		},
 
-		updateReady(ctx, ){
+		updateReady(ctx ){
 
 			ctx.state.ready++;
 		},

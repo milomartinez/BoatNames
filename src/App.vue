@@ -76,6 +76,12 @@ export default {
 		}
 	},
 
+
+
+  checkUpdateReady(){
+    this.updateReady( )
+  },
+
 	created:  function()  {
 
 		this.design_data = jDesignData
@@ -83,9 +89,9 @@ export default {
 
 
 		this.processDesignData();
-		this.processProducts();	
-		this.updateReady( true);
-		var xhttp1 = new XMLHttpRequest();
+		this.processProducts();
+    this.updateReady( )
+		/*var xhttp1 = new XMLHttpRequest();
 		
 		xhttp1.onreadystatechange = function() {
 		
@@ -106,35 +112,34 @@ export default {
 		xhttp1.open("GET", "/design/data.json", true);
 		//xhttp1.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; UTF-8");
 		xhttp1.send();	
+*/
 
 
-
-		console.log("req desig products")
+		console.log("req design products")
 		
-		var xhttp2 = new XMLHttpRequest();
-		xhttp2.onreadystatechange = function() {
-				console.log("readyState:"+xhttp2.readyState+" status:"+xhttp2.status)
-			if (xhttp2.readyState == 4 && xhttp2.status == 200) {
+		let httpReq = new XMLHttpRequest();
+    httpReq.onreadystatechange = function() {
+				console.log("readyState:"+httpReq.readyState+" status:"+httpReq.status)
+			if (httpReq.readyState === 4 && httpReq.status === 200) {
 			
-				console.log("1. responseText:",xhttp2.responseText)
+				console.log("1. responseText:",httpReq.responseText)
 				//console.log("1. response:",xhttp2.response)
 				//console.log("1. responseType:",xhttp2.responseType)
-				this.products =  JSON.parse(xhttp2.responseText)
-				//console.log("2. products:",this.products )
+				this.products =  JSON.parse(httpReq.responseText)
+				console.log("2. products:",this.products )
 				this.processProducts();		
-				this.updateReady( true);
+
 
 			}
+      this.updateReady( )
 		}.bind(this)
 		
 		var endpoint = "https://www.boatnames.com.au/wp-json/custom-api/v1/products";
-		//	xhttp2.open("POST", "/designproductdata/", true);
-		//var endpoint = "/api/wp-json/custom-api/v1/products";
-		xhttp2.open("GET", endpoint, true);
-		//xhttp2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; UTF-8");
-		xhttp2.send();	
+    httpReq.open("GET", endpoint, true);
+    httpReq.send();
 
-	},    
+	},
+
 
 	updated(){
         switch(this.$route.name){
@@ -149,7 +154,8 @@ export default {
                  this.$store.state.current_display =  "HomePort";
                 break;
 		}
-	}
+	},
+
 };
 </script>
 
